@@ -1,0 +1,83 @@
+SDAccel Profile Summary
+Generated on: 2018-06-22 11:08:57
+Msec since Epoch: 1529636937074
+Profiled application: mmult
+Target platform: Xilinx
+Target devices: xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0
+Flow mode: System Run
+Tool version: 2017.1
+
+OpenCL API Calls
+API Name,Number Of Calls,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
+clCreateProgramWithBinary,1,27785.5,27785.5,27785.5,27785.5,
+clEnqueueReadBuffer,1,23.034,23.034,23.034,23.034,
+clReleaseProgram,1,0.441521,0.441521,0.441521,0.441521,
+clEnqueueWriteBuffer,2,0.179102,0.015263,0.089551,0.163839,
+clCreateBuffer,3,0.048643,0.002165,0.0162143,0.042617,
+clEnqueueTask,1,0.046778,0.046778,0.046778,0.046778,
+clCreateContext,1,0.018588,0.018588,0.018588,0.018588,
+clReleaseKernel,1,0.017769,0.017769,0.017769,0.017769,
+clGetPlatformIDs,1,0.016187,0.016187,0.016187,0.016187,
+clCreateKernel,1,0.014124,0.014124,0.014124,0.014124,
+clSetKernelArg,3,0.010162,0.000955,0.00338733,0.007957,
+clBuildProgram,1,0.008462,0.008462,0.008462,0.008462,
+clCreateCommandQueue,1,0.006581,0.006581,0.006581,0.006581,
+clGetDeviceIDs,2,0.005918,0.000687,0.002959,0.005231,
+clGetPlatformInfo,1,0.00458,0.00458,0.00458,0.00458,
+clReleaseMemObject,3,0.004518,0.000511,0.001506,0.003391,
+clWaitForEvents,1,0.004124,0.004124,0.004124,0.004124,
+clGetDeviceInfo,1,0.00333,0.00333,0.00333,0.00333,
+clReleaseCommandQueue,1,0.002253,0.002253,0.002253,0.002253,
+clReleaseContext,1,0.001048,0.001048,0.001048,0.001048,
+
+
+Kernel Execution
+Kernel,Number Of Enqueues,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
+mmult,1,0.071164,0.071164,0.071164,0.071164,
+
+
+Compute Unit Utilization
+Device,Compute Unit,Kernel,Global Work Size,Local Work Size,Number Of Calls,Total Time (ms),Minimum Time (ms),Average Time (ms),Maximum Time (ms),
+xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,mmult_1,mmult,1:1:1,1:1:1,1,0.056332,0.056332,0.056332,0.056332,
+
+
+Data Transfer: Host and Global Memory
+Context:Number of Devices,Transfer Type,Number Of Transfers,Transfer Rate (MB/s),Average Bandwidth Utilization (%),Average Size (KB),Total Time (ms),Average Time (ms),
+context0:1,READ,1,0.094191,0.000981,1.024,10.871511,10.871511,
+context0:1,WRITE,2,140.360496,1.462089,1.024,0.014591,0.007295,
+
+
+Data Transfer: Kernels and Global Memory
+Device,Transfer Type,Number Of Transfers,Transfer Rate (MB/s),Average Bandwidth Utilization (%),Average Size (KB),Average Time (ns),Device Execution Time (ms),
+xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,READ,32,28.7786,0.249814,0.064,892.5,0.071164,
+xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,WRITE,16,14.3893,0.124907,0.064,95,0.071164,
+
+
+Top Data Transfer: Kernels and Global Memory
+Device,Kernel Name,Number of Transfers,Average Bytes per Transfer,Transfer Efficiency (%),Total Data Transfer (MB),Total Write (MB),Total Read (MB),Transfer Rate (MB/s),Average Bandwidth Utilization (%),
+xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,ALL,48,64,1.5625,0.003072,0.001024,0.002048,43.1679,0.374721,
+
+
+Top Kernel Execution
+Kernel Instance Address,Kernel,Context ID,Command Queue ID,Device,Start Time (ms),Duration (ms),Global Work Size,Local Work Size,
+8081568,mmult,0,0,xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,27848.6,0.071164,1:1:1,1:1:1,
+
+
+Top Buffer Writes
+Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Writing Rate(MB/s),
+8080528,0,0,27836.4,0.011984,1.024,85.447263,
+8093152,0,0,27836.5,0.002607,1.024,392.788646,
+
+
+Top Buffer Reads
+Buffer Address,Context ID,Command Queue ID,Start Time (ms),Duration (ms),Buffer Size (KB),Reading Rate(MB/s),
+8093424,0,0,27848.7,10.871511,1.024,0.094191,
+
+
+PRC Parameters
+Parameter,Element,Value,
+DEVICE_EXEC_TIME,xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,0.071164,
+CU_CALLS,xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0|mmult_1,1,
+MEMORY_BIT_WIDTH,xilinx:huawei-vu9p-fp1:4ddr-xpr:4.1-0,512,
+
+
