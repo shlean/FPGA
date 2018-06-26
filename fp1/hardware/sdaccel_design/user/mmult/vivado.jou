@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.1_sdx (64-bit)
+# SW Build 1915620 on Thu Jun 22 17:54:59 MDT 2017
+# IP Build 1908669 on Thu Jun 22 19:20:41 MDT 2017
+# Start of session at: Fri Jun 22 11:07:06 2018
+# Process ID: 23993
+# Current directory: /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi
+# Command line: vivado -mode batch -notrace -source /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi/ipirun.tcl -messageDb /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi/vivado.pb
+# Log file: /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi/vivado.log
+# Journal file: /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi/vivado.jou
+#-----------------------------------------------------------
+source /root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/build/system/bin_mmult_hw/bitstream/bin_mmult_hw_ipi/ipirun.tcl -notrace

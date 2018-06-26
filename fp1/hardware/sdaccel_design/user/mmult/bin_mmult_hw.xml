@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="bin_mmult_hw">
+  <platform vendor="xilinx" boardid="huawei-vu9p-fp1" name="4ddr-xpr" featureRomTime="1523399010">
+    <version major="4" minor="1"/>
+    <description>This platform targets the huawei atlas Board for Acceleration with Virtex UltraScale+ VU9P FPGA. This high-performance acceleration platform features four channels of DDR4-2400 SDRAM, the expanded partial reconfiguration flow for high fabric resource availability, and Xilinx DMA Subsystem for PCI Express with PCIe Gen3 x16 connectivity.</description>
+    <board name="huawei.com:none:1.0" vendor="huawei.com" fpga="xcvu9p-flgb2104-2-i">
+      <interfaces>
+        <interface id="int1" name="PCIe" type="gen3x16"/>
+      </interfaces>
+      <memories>
+        <memory name="expanded_region_memc_ddrmem_0" type="ddr4" size="16GB"/>
+        <memory name="base_region_memc_ddrmem_1" type="ddr4" size="16GB"/>
+        <memory name="expanded_region_memc_ddrmem_2" type="ddr4" size="16GB"/>
+        <memory name="expanded_region_memc_ddrmem_3" type="ddr4" size="16GB"/>
+      </memories>
+      <images>
+        <image name="huawei_vu9p_fp1.jpeg" type="HDPI"/>
+        <image name="huawei_vu9p_fp1.jpeg" type="MDPI"/>
+        <image name="huawei_vu9p_fp1.jpeg" type="LDPI"/>
+      </images>
+      <id>
+        <vendor>0x19e5</vendor>
+        <device>0xd512</device>
+        <subsystem>0x4341</subsystem>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="x86_64"/>
+    <device name="fpga0" fpgaDevice="virtexuplus:xcvu9p:flgb2104:-2:i" addrWidth="36">
+      <core name="OCL_REGION_0" target="bitstream" type="clc_region" clockFreq="300MHz" numComputeUnits="16">
+        <kernelClocks>
+          <clock port="DATA_CLK" frequency="300MHz"/>
+          <clock port="KERNEL_CLK2" frequency="500MHz"/>
+        </kernelClocks>
+        <kernel name="mmult" language="c" vlnv="xilinx.com:hls:mmult:1.0" preferredWorkGroupSizeMultiple="1" workGroupSize="1" debug="false">
+          <module name="mmult"/>
+          <port name="M_AXI_GMEM" mode="master" range="0xFFFFFFFF" dataWidth="32" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x1000" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="a" addressQualifier="1" id="0" port="M_AXI_GMEM" size="0x8" offset="0x10" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="b" addressQualifier="1" id="1" port="M_AXI_GMEM" size="0x8" offset="0x1C" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <arg name="output_r" addressQualifier="1" id="2" port="M_AXI_GMEM" size="0x8" offset="0x28" hostOffset="0x0" hostSize="0x8" type="int*"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="mmult_1">
+            <addrRemap base="0x00000000" port="S_AXI_CONTROL"/>
+          </instance>
+        </kernel>
+        <connection srcType="kernel" srcInst="mmult_1" srcPort="M_AXI_GMEM" dstType="core" dstInst="OCL_REGION_0" dstPort="M00_AXI"/>
+        <connection srcType="core" srcInst="OCL_REGION_0" srcPort="S_AXI" dstType="kernel" dstInst="mmult_1" dstPort="S_AXI_CONTROL"/>
+      </core>
+    </device>
+  </platform>
+</project>
