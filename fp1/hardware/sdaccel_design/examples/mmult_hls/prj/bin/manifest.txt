@@ -1,0 +1,9 @@
+manifest_format_version=1
+pci_vendor_id="0x19e5"
+pci_device_id="0xD512"
+pci_subsystem_id="-"
+pci_subsystem_vendor_id="-"
+shell_type="0x121"
+shell_version="0x0005"
+hdk_version="SDx 2017.1"
+date=2018/05/31_13:26:57
