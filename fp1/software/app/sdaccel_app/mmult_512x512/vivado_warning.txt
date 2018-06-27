@@ -1,0 +1,1 @@
+One or more timing paths failed timing targeting 300 MHz for kernel clock 'DATA_CLK'. The frequency is being automatically changed to 180 MHz to enable proper functionality
