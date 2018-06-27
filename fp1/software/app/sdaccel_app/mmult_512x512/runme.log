@@ -1,0 +1,99 @@
+
+*** Running vivado_hls
+    with args -f mmult.tcl -messageDb vivado_hls.pb
+
+================================================================
+  Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC
+  Version 2017.1
+  Build 1846317 on Thu Jun 22 18:17:09 MDT 2017
+  Copyright (C) 1986-2017 Xilinx, Inc. All Rights Reserved.
+================================================================
+INFO: [HLS 200-10] Running '/software/Xilinx/SDx_2017.1/SDx/2017.1/Vivado_HLS/bin/unwrapped/lnx64.o/vivado_hls'
+INFO: [HLS 200-10] For user 'root' on host 'ecs-4cbc.novalocal' (Linux_x86_64 version 3.10.0-514.el7.x86_64) on Tue Jun 26 20:16:46 CST 2018
+INFO: [HLS 200-10] On os "CentOS Linux release 7.3.1611 (Core) "
+INFO: [HLS 200-10] In directory '/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/kernels/mmult'
+INFO: [HLS 200-10] Creating and opening project '/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/kernels/mmult/mmult'.
+INFO: [HLS 200-10] Adding design file '/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c' to the project
+INFO: [HLS 200-10] Creating and opening solution '/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/_xocc_mmult_bin_mmult_hw.dir/impl/kernels/mmult/mmult/solution_OCL_REGION_0'.
+INFO: [HLS 200-10] Setting target device to 'xcvu9p-flgb2104-2-i'
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.33333ns.
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.9ns.
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+INFO: [XFORM 203-1171] Pipeline the innermost loop with trip count more than 64 or its parent loop when its trip count is less than or equal 64.
+INFO: [XFORM 203-1161] The maximum of name length is set into 256.
+INFO: [HLS 200-10] Analyzing design file '/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c' ... 
+INFO: [HLS 200-10] Validating synthesis directives ...
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 457.391 ; gain = 31.492 ; free physical = 82146 ; free virtual = 94181
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 457.391 ; gain = 31.492 ; free physical = 82147 ; free virtual = 94182
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 457.391 ; gain = 31.492 ; free physical = 82145 ; free virtual = 94180
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 457.391 ; gain = 31.492 ; free physical = 82145 ; free virtual = 94180
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 585.387 ; gain = 159.488 ; free physical = 82125 ; free virtual = 94160
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-3.1' (/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c:67:26) in function 'mmult'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-3' (/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c:66:24) in function 'mmult'.
+INFO: [XFORM 203-811] Inferring bus burst read of length 262144 on port 'gmem' (/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c:63:3).
+INFO: [XFORM 203-811] Inferring bus burst read of length 262144 on port 'gmem' (/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c:64:3).
+INFO: [XFORM 203-811] Inferring bus burst write of length 262144 on port 'gmem' (/root/huaweicloud-fpga/fp1/hardware/sdaccel_design/user/mmult/src/mmult.c:80:3).
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:03 ; elapsed = 00:00:02 . Memory (MB): peak = 585.387 ; gain = 159.488 ; free physical = 82133 ; free virtual = 94168
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'mmult' ...
+WARNING: [SYN 201-107] Renaming port name 'mmult/output' to 'mmult/output_r' to avoid the conflict with HDL keywords or other object names.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mmult' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.bufa.a'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.bufb.b'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 3'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 7.
+INFO: [SCHED 204-61] Pipelining loop 'memcpy.output.bufc.gep'.
+INFO: [SCHED 204-61] Pipelining result: Target II: 1, Final II: 1, Depth: 3.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 2.31 seconds; current allocated memory: 59.717 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.14 seconds; current allocated memory: 60.317 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mmult' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult/gmem' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult/a' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult/b' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'mmult/output_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'mmult' to 's_axilite & ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Bundling port 'return', 'b' and 'output_r' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mmult_mul_32s_32s_32_2': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mmult'.
+INFO: [HLS 200-111]  Elapsed time: 0.16 seconds; current allocated memory: 61.924 MB.
+INFO: [RTMG 210-282] Generating pipelined core: 'mmult_mul_32s_32s_32_2_MulnS_0'
+INFO: [RTMG 210-278] Implementing memory 'mmult_bufa_ram (RAM)' using block RAMs.
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 585.387 ; gain = 159.488 ; free physical = 82121 ; free virtual = 94159
+INFO: [SYSC 207-301] Generating SystemC RTL for mmult.
+INFO: [VHDL 208-304] Generating VHDL RTL for mmult.
+INFO: [VLOG 209-307] Generating Verilog RTL for mmult.
+INFO: [IMPL 213-8] Exporting RTL as an IP in IP-XACT.
+
+
+****** Vivado v2017.1_sdx (64-bit)
+  **** SW Build 1915620 on Thu Jun 22 17:54:59 MDT 2017
+  **** IP Build 1908669 on Thu Jun 22 19:20:41 MDT 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+INFO: [Common 17-1460] Use of init.tcl in /software/Xilinx/SDx_2017.1/SDx/2017.1/Vivado/scripts/init.tcl is deprecated. Please use Vivado_init.tcl 
+Sourcing tcl script '/software/Xilinx/SDx_2017.1/SDx/2017.1/Vivado/scripts/init.tcl'
+0 Beta devices matching pattern found, 0 enabled.
+Loaded SDSoC Platform Tcl Library
+source run_ippack.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/software/Xilinx/SDx_2017.1/SDx/2017.1/Vivado/data/ip'.
+WARNING: [Vivado 12-4404] The CPU emulation flow is not supported when using a packaged XO file with XOCC.
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 26 20:17:03 2018...
+Vivado HLS completed successfully
+INFO: [HLS 200-112] Total elapsed time: 41.97 seconds; peak allocated memory: 61.924 MB.
